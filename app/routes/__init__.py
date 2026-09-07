@@ -1,4 +1,4 @@
-from app.routes.health_hp import bp as health_bp
+from app.routes.health import bp as health_bp
 
 
 def register_blueprints(app) : 
