@@ -20,7 +20,7 @@ reconstruire la même architecture à chaque projet.
 - Des **Blueprints** organisés par domaine
 - SQLAlchemy et Flask-Migrate déjà configurés
 - Une configuration par environnement avec `.env`
-- PostgreSQL comme base de données de référence, sans fallback SQLite
+- PostgreSQL comme base de données de référence
 
 ## Stack
 
