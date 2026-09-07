@@ -118,12 +118,12 @@ Exemple avec un domaine `products` :
 | Méthode | Route | Description |
 | --- | --- | --- |
 | `GET` | `/health` | Vérifie que l'API répond |
-| `GET` | `/users` | Liste les utilisateurs |
-| `POST` | `/users` | Crée un utilisateur |
-| `GET` | `/users/<id>` | Récupère un utilisateur |
-| `PUT` | `/users/<id>` | Met à jour un utilisateur |
-| `DELETE` | `/users/<id>` | Supprime un utilisateur |
+| `GET` | `/users/` | Liste les utilisateurs (exemple à activer) |
+| `POST` | `/users/` | Crée un utilisateur (exemple à activer) |
+| `GET` | `/users/<id>` | Récupère un utilisateur (exemple à activer) |
+| `PUT` | `/users/<id>` | Met à jour un utilisateur (exemple à activer) |
+| `DELETE` | `/users/<id>` | Supprime un utilisateur (exemple à activer) |
 
-## Licence
-
-Ce template est destiné à être copié et adapté à vos projets.
+La route `/health` est active immédiatement. Le CRUD `users` est fourni comme
+exemple dans `app/routes/users.py` et peut être activé lorsque le modèle User
+est conservé dans le projet.
