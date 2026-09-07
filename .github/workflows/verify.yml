@@ -24,11 +24,15 @@ jobs:
 
       - name: Start Flask and verify health route
         env:
-          FLASK_ENV: development
+          FLASK_ENV: production
           DATABASE_URL: postgresql://ci:ci@localhost:5432/health_check
           SECRET_KEY: ci-test-secret
         run: |
-          python run.py > flask.log 2>&1 &
+          python -m flask --app run run \
+            --host 127.0.0.1 \
+            --port 5000 \
+            --no-debugger \
+            --no-reload > flask.log 2>&1 &
           flask_pid=$!
 
           trap 'kill "$flask_pid"' EXIT
@@ -37,12 +41,17 @@ jobs:
           health_check_passed=false
 
           for attempt in {1..30}; do
-            response=$(curl --noproxy '*' --fail --silent --show-error http://127.0.0.1:5000/health) && \
-              echo "$response" | grep --fixed-strings --quiet '"status":"ok"'
-            if [ "$?" -eq 0 ]; then
-              health_response="$response"
-              health_check_passed=true
-              break
+            if ! kill -0 "$flask_pid" 2>/dev/null; then
+              cat flask.log
+              exit 1
+            fi
+
+            if response=$(curl --noproxy '*' --fail --silent --show-error http://127.0.0.1:5000/health); then
+              if echo "$response" | grep --fixed-strings --quiet '"status":"ok"'; then
+                health_response="$response"
+                health_check_passed=true
+                break
+              fi
             fi
             sleep 1
           done
