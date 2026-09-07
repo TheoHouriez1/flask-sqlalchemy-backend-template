@@ -6,7 +6,6 @@
 
 <p align="center">
    <a href="https://github.com/TheoHouriez1/flask-sqlalchemy-backend-template"><img src="https://img.shields.io/github/last-commit/TheoHouriez1/flask-sqlalchemy-backend-template?style=flat-square&label=derni%C3%A8re%20mise%20%C3%A0%20jour" alt="Dernière mise à jour"></a>
-   <a href="https://github.com/TheoHouriez1/flask-sqlalchemy-backend-template/commits/main"><img src="https://img.shields.io/github/commit-activity/y/TheoHouriez1/flask-sqlalchemy-backend-template?style=flat-square&label=activit%C3%A9" alt="Activité des commits"></a>
    <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-3.0.3-000000?style=flat-square&logo=flask&logoColor=white" alt="Flask 3.0.3"></a>
    <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/PostgreSQL-15%2B-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL 15+"></a>
    <a href="https://github.com/TheoHouriez1/flask-sqlalchemy-backend-template"><img src="https://img.shields.io/github/repo-size/TheoHouriez1/flask-sqlalchemy-backend-template?style=flat-square&label=taille%20du%20d%C3%A9p%C3%B4t" alt="Taille du dépôt"></a>
